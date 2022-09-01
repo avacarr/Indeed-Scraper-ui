@@ -1,5 +1,6 @@
 # Indeed-Scraper
   > SEI - Software Engineering Project 4
+  > 
   > Created By: Alex Carr
 
 ### Indeed-Scraper
