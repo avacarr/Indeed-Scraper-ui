@@ -1,10 +1,9 @@
 # Indeed-Scraper
- # Marvel-Wiki
-  > SEI - Software Engineering Project 3 
-  > Created By: Alex Carr, Damian Fletcher, Eric Pettaway, Jeremy Currier
+  > SEI - Software Engineering Project 4
+  > Created By: Alex Carr
 
-### Marvel Wiki
-  Our team is planning on creating a Wikipedia of the Marvel Universe. We plan to utilize the Marvel API found on [a link](https://www.marvel.com/)
+### Indeed-Scraper
+  The concept behind this is to create a smart searchf for indeed job opportunities based on some information entered by a user. 
 
 
 ### MVP
