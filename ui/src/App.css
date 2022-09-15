@@ -1,0 +1,147 @@
+.App {
+  text-align: center;
+  background-color: aqua;
+  box-shadow: inset 0 0 100px darkblue;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+
+.animation1::before {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  right: 50%;
+  border-radius: 10%;
+  animation: wave 20s linear infinite;
+}
+
+.animation1::after {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 10%;
+  animation: wave 18s linear infinite;
+}
+
+.animation2::before {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  bottom: 50%;
+  left: 50%;
+  border-radius:10%;
+  animation: wave 16s linear infinite;
+}
+
+.animation2::after {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 10%;
+  animation: wave 14s linear infinite;
+}
+
+.animation3::before {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 10%;
+  animation: wave 12s linear infinite;
+}
+
+.animation3::after {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  border-radius:10%;
+  animation: wave 10s linear infinite;
+}
+
+.animation4::before {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  border-radius:10%;
+  animation: wave 8s linear infinite;
+}
+
+.animation4::after {
+  background-color: white;
+  opacity: 0.35;
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  border-radius:10%;
+  animation: wave 6s linear infinite;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes wave {
+  0% { 
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

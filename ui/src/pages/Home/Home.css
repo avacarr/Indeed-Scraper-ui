@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.card {
+    margin: 10px;
+    border: 2px solid blue;
+}
+
+.toggle {
+    display: none;
+}
+
+.select-list {
+    background-color: dodgerblue;
+    backdrop-filter: blur(0px);
+    margin-left: 35vw;
+    width: 10vw;
+}
