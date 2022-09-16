@@ -16,6 +16,7 @@ const NavBarContainer = styled.nav`
         top: 1vh;
         maxHeight: 30px;
     }
+    
 `
 
 
