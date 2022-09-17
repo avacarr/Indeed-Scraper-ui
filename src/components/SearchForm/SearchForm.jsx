@@ -33,7 +33,7 @@ function SearchForm() {
             if (formData.primaryFilter) {url = url + "sort=" + formData.primaryFilter +"&"}
             if (formData.postDate) {url = url + "fromage=" + formData.postDate + "&"}
             console.log(url)
-            axios.put('http://localhost:3001/get', {url: url})
+            axios.put(process.env.REACT_APP_BACKEND_URL+'get', {url: url})
             .then(res => {
 
                 let data = localStorage.getItem('data')
@@ -61,10 +61,12 @@ function SearchForm() {
                         url: url
                     })
                     localStorage.setItem('user', JSON.stringify(user))
-                    axios.put('http://localhost:3001/update', {user})
-                    .then(res => console.log("updated"))
+                    axios.put(process.env.REACT_APP_BACKEND_URL+'update', {user})
+                    .then(res => {
+                        console.log("updated user data")
+                        window.location.reload()
+                    })
                 }
-                window.location.reload()
             })
         } else {}
     }
@@ -94,7 +96,7 @@ function SearchForm() {
                 <label htmlFor='primaryFilter'>Primary Filter Method</label>
                 <select id='primaryFilter' name='primaryFilter' onChange={handleChange}>
                     <option value='' selected>Relevance</option>
-                    <option value='sort=date'>Date</option>
+                    <option value='date'>Date</option>
                 </select>
             </div>
             <input type='submit' value='Search Jobs'/>

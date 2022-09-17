@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 const NavBarContainer = styled.nav`
     margin-bottom: 0;
+    backdrop-filter: blur(0px);
     h1 {
         margin-top: 0;
         height: 4vh;
@@ -30,8 +31,17 @@ function NavBar() {
         width: '10vw', 
         maxHeight: '5vh'
     }
+
+    const getUserSaves = () => {
+        let reqAll = JSON.parse(localStorage.getItem('user'))
+        axios.put(process.env.REACT_APP_BACKEND_URL+'getAll', reqAll.saved)
+        .then(res => {
+            localStorage.setItem('data', JSON.stringify(res.data))
+            window.location.reload()
+        })
+    }
     const HandleLogin = async () => {
-        const googleLoginURL = "http://localhost:3001/auth/google/login";
+        const googleLoginURL = process.env.REACT_APP_BACKEND_URL+'auth/google/login';
         const newWindow = window.open(googleLoginURL,
             "_blank",
             "width=500,height=600"
@@ -39,36 +49,35 @@ function NavBar() {
         if (newWindow) {
             let check = setInterval(() => {
                 if (newWindow.closed) {
-                    axios.put('http://localhost:3001/auth/login/check')
+                    axios.put(process.env.REACT_APP_BACKEND_URL+'auth/login/check')
                     .then(res => {
-                    console.log("login res", res.data)
                     localStorage.setItem('user', JSON.stringify(res.data))
                     clearInterval(check)
-                    window.location.reload()
+                    getUserSaves()
                     })
                 }
-            }, 300)
+            }, 300);
+            
         } 
         
-          
-
     };
 
     const HandleLogout = async() => {
-        axios.put('http://localhost:3001/auth/google/logout')
+        axios.put(process.env.REACT_APP_BACKEND_URL+'auth/google/logout')
         .then((res) => {console.log("successful logout of google")})
         let user = JSON.parse(localStorage.getItem('user'))
         localStorage.setItem('user', JSON.stringify(user))
-        axios.put('http://localhost:3001/update', {user})
-        .then(res => console.log("updated"))
-        localStorage.setItem('user', "")
+        axios.put(process.env.REACT_APP_BACKEND_URL+'update', {user})
+        .then(res => console.log("update user data"))
+        localStorage.removeItem('user')
+        localStorage.removeItem('data')
         window.location.reload()
     }
     
     return (
         <NavBarContainer>
             {test ? 
-                    <h1>Welcom back {JSON.parse(test).username}</h1> : 
+                    <h1>Welcome back {JSON.parse(test).username}</h1> : 
                     <h1>Welcome to the Indeed Scraping tool</h1>}
             {test ? 
                     <img src={googleLogoutImgUrl} style={imgStyle} onClick={HandleLogout} alt={"Logout"}/> : 

@@ -2,22 +2,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import './Home.css'
 
 
 const ButtonContainer = styled.div`
-    border: 2px solid lightblue;
-    width: 10vw;
-    height: 4vh;
-    margin: auto;
-    margin-top: 50vh
+    poisiton: relative;
+    border: 2px solid black;
+    width: 100px;
+    height: 6vh;
+    margin: 50vh 0 39vh 45vw;
+    backdrop-filter: blur(0px);
+    text-align: center;
 `
 
 
 const Home = () => {
   const linkStyle = { 
     textDecoration: 'none',
-    color: 'lightblue'
+    color: 'black',
   }
   return (
     <ButtonContainer>

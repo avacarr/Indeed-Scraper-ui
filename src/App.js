@@ -1,7 +1,7 @@
 
 import './App.css';
 import { NavBar } from './components/index';
-import { Home, Search, Show, User } from './pages/index';
+import { Home, Search} from './pages/index';
 import { Route, Routes, Navigate } from 'react-router-dom'
 
 function App() {
@@ -16,8 +16,6 @@ function App() {
           <Route path="/" element={<Navigate replace to="/home"/>}/>
           <Route path='/home' element={<Home />}/>
           <Route path='/search' element={<Search />}/>
-          <Route path='/show/:id' element={<Show />}/>
-          <Route path='/user' element={<User />}/>
         </Routes>
     </div>
   );

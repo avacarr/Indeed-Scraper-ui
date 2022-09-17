@@ -1,6 +1,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import {FavoritesForm} from '../../components/index.js' 
 
 
 const SearchFilterContainer = styled.div`
@@ -39,19 +40,18 @@ function SearchFilter() {
 
     return (
         <SearchFilterContainer>
-            
-            {data ? (                 
-                dataOut.map((el, i) => (
-                    <div className='card' data-id={i} id={i} onClick={() => toggle({i})}>
-                        <p>{el.search.search}</p>
-                        <p>{el.search.location}</p>
-                        <p>{el.search.postDate} Days Ago</p>
-                        <p>{el.search.primaryFilter}</p>
-                    </div>
-                ))) : (
-                <p>SearchFilter</p>
-                )
-            }
+                {data ? (                 
+                    dataOut.map((el, i) => ( 
+                        <div className='card filter' data-id={i} id={i} onClick={() => toggle({i})}>
+                            <p>{el.search.search}</p>
+                            <p>{el.search.location}</p>
+                            <p>{el.search.postDate} Days Ago</p>
+                            <FavoritesForm id={i} site={el.search.url}/>
+                        </div>
+                    ))) : (
+                    <></>
+                    )
+                }
         </SearchFilterContainer>
     );
 }

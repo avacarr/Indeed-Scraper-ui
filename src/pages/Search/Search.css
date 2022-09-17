@@ -1,0 +1,55 @@
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+p {
+    margin: 0 20px 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    margin: 10px;
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+
+.filter {
+    position: relative;
+}
+
+.toggle {
+    display: none;
+}
+
+.select-list {
+    background-color: dodgerblue;
+    backdrop-filter: blur(0px);
+    margin-left: 35vw;
+    width: 10vw;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+}
+
+select {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+}
+
+input[type=text]:nth-child(1) {
+    width: 20vw;
+    color: black;
+}
