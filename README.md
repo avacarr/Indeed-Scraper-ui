@@ -72,7 +72,7 @@ User = {
     - As an unlogged-in user, I would like to be able to browse all the jobs.
     - As an unlogged-in user, I would like to be able to set the search parameters.
     - As an unlogged-in user, I would like to have the option to login/signup on any page.
-    - As a logged-in user, I would like to be able to save jobs.
+    - As a logged-in user, I would like to be able to searches jobs.
     - As a logged-in user, I would like to have a user page that displays all saves.
     - As a logged-in user, I would like to have the option to see my previous searches.
 
