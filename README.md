@@ -77,7 +77,7 @@ User = {
     - As a logged-in user, I would like to have the option to see my previous searches.
 
 
-### Wireframe
+### Photos
 
 #### Home View
 ![Screen Shot 2022-09-17 at 6 40 16 AM](https://user-images.githubusercontent.com/102195632/190859927-20d79f92-896e-4681-812d-27d2feff605a.png)
