@@ -64,7 +64,7 @@ function SearchForm() {
                     axios.put(process.env.REACT_APP_BACKEND_URL+'update', {user})
                     .then(res => {
                         console.log("updated user data")
-                        window.location.reload()
+                        window.location.reload(false)
                     })
                 }
             })

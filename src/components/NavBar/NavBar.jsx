@@ -37,8 +37,8 @@ function NavBar() {
         axios.put(process.env.REACT_APP_BACKEND_URL+'getAll', reqAll.saved)
         .then(res => {
             localStorage.setItem('data', JSON.stringify(res.data))
-            window.location.reload()
         })
+        window.location.reload()
     }
     const HandleLogin = async () => {
         const googleLoginURL = process.env.REACT_APP_BACKEND_URL+'auth/google/login';
