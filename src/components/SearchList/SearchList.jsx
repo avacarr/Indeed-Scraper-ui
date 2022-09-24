@@ -18,13 +18,13 @@ function SearchList() {
     var data = localStorage.getItem('data')
     var skip
     const randomColor = () => {
-        for (var i = 0; i < dataOut.length; i++) {
+        if (dataOut) {for (var i = 0; i < dataOut.length; i++) {
             let randomColor = Math.floor(Math.random()*16777215).toString(16);
             let arr = document.querySelectorAll('[data-id="' +i+ '"]');
             for(let h = 0; h < arr.length; h++) {
                 arr[h].style.borderColor = "#" + randomColor
             }
-        }
+        }}
     }
 
     if (data) {

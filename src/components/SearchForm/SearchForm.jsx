@@ -53,7 +53,7 @@ function SearchForm() {
 
                 if (test) {
                     let user = JSON.parse(localStorage.getItem('user'))
-                    user.search_history.push({
+                    user.search_Navigate.push({
                         search: formData.search,
                         location: formData.location,
                         primaryFilter: formData.primaryFilter,
@@ -64,9 +64,9 @@ function SearchForm() {
                     axios.put(process.env.REACT_APP_BACKEND_URL+'update', {user})
                     .then(res => {
                         console.log("updated user data")
-                        window.location.reload(false)
+                        window.location.reload(true)
                     })
-                }
+                } else {window.location.reload(true)}
             })
         } else {}
     }
